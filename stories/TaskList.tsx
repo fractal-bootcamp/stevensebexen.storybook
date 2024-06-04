@@ -21,7 +21,7 @@ function sortTaskList(a: TaskProps, b: TaskProps) {
 
 export function TaskList(props: TaskListProps) {
 
-  const [taskList, setTaskList] = useState<TaskProps[]>(props.tasks ? props.tasks.sort(sortTaskList) : []);
+  const [taskList, setTaskList] = useState<TaskProps[]>(props.tasks ? [...props.tasks].sort(sortTaskList) : []);
 
   return (
     <div className="flex flex-col gap-[16px]">
