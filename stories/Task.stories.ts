@@ -19,6 +19,7 @@ export const Primary: Story = {
   args: {
     name: 'Name',
     description: 'Description',
-    isCompleted: false
+    isCompleted: false,
+    width: 300
   }
 }
