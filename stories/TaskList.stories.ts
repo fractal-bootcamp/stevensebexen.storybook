@@ -36,6 +36,7 @@ const dummyTaskList: Array<TaskProps> = [
 
 export const Primary: Story = {
   args: {
-    tasks: dummyTaskList
+    tasks: dummyTaskList,
+    width: 300
   }
 }

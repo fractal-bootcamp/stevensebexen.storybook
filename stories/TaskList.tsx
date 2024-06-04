@@ -3,7 +3,8 @@ import { useState } from 'react';
 import { Task, TaskProps } from './Task';
 
 interface TaskListProps {
-  tasks: Array<TaskProps>
+  tasks?: Array<TaskProps>
+  width?: number
 }
 
 function sortTaskList(a: TaskProps, b: TaskProps) {
@@ -20,11 +21,11 @@ function sortTaskList(a: TaskProps, b: TaskProps) {
 
 export function TaskList(props: TaskListProps) {
 
-  const [taskList, setTaskList] = useState<TaskProps[]>(props.tasks.sort(sortTaskList));
+  const [taskList, setTaskList] = useState<TaskProps[]>(props.tasks ? props.tasks.sort(sortTaskList) : []);
 
   return (
     <div className="flex flex-col gap-[16px]">
-      {taskList.map((task, index) => <Task name={task.name} description={task.description} isCompleted={task.isCompleted}
+      {taskList.map((task, index) => <Task name={task.name} description={task.description} isCompleted={task.isCompleted} width={props.width || 300}
       onClick={() => {
         const newTaskList = [...taskList];
         newTaskList[index].isCompleted = !newTaskList[index].isCompleted;
