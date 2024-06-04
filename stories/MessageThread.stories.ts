@@ -18,6 +18,8 @@ type Story = StoryObj<typeof MessageThread>;
 export const Primary: Story = {
   args: {
     currentUserId: 1,
+    width: 600,
+    messageWidth: 475,
     messages: [
       {
         timestamp: new Date(100),
