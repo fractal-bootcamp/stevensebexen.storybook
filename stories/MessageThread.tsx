@@ -42,7 +42,7 @@ export function MessageThread(props: MessageThreadProps) {
         sortedMessages?.map((currentMessage, index) => {
           const currentMessageProps: MessageProps = {
             timestamp: currentMessage.timestamp,
-            sender: {...currentMessage.sender},
+            sender: currentMessage.sender,
             content: currentMessage.content,
             messagePosition: getMessagePositionAtIndex(index),
             isCurrentUser: props.currentUserId === currentMessage.sender.id,
