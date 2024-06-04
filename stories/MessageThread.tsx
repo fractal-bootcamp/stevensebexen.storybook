@@ -9,7 +9,7 @@ interface MessageThreadProps {
 
 export function MessageThread(props: MessageThreadProps) {
 
-  const sortedMessages = props.messages?.sort((a, b) => a.timestamp > b.timestamp ? 1 : b.timestamp > a.timestamp ? -1 : 0);
+  const sortedMessages = props.messages?.sort((a, b) => a.timestamp.getTime() > b.timestamp.getTime() ? 1 : b.timestamp.getTime() > a.timestamp.getTime() ? -1 : 0);
 
   function getMessagePositionAtIndex(index: number) {
     if (!sortedMessages) { return MessagePosition.Island; }
@@ -49,7 +49,7 @@ export function MessageThread(props: MessageThreadProps) {
             width: props.messageWidth || 475
           }
           // Timestamp as a key isn't *PERFECT* but I don't have a UID system here.
-          return <Message key={currentMessage.timestamp.getMilliseconds()} timestamp={currentMessageProps.timestamp} sender={currentMessageProps.sender} content={currentMessageProps.content} messagePosition={currentMessageProps.messagePosition} isCurrentUser={currentMessageProps.isCurrentUser} width={currentMessageProps.width}></Message>
+          return <Message key={currentMessage.timestamp.getTime()} timestamp={currentMessageProps.timestamp} sender={currentMessageProps.sender} content={currentMessageProps.content} messagePosition={currentMessageProps.messagePosition} isCurrentUser={currentMessageProps.isCurrentUser} width={currentMessageProps.width}></Message>
         })
       }
     </div>
