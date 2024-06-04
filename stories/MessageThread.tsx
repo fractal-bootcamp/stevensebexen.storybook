@@ -10,7 +10,6 @@ interface MessageThreadProps {
 export function MessageThread(props: MessageThreadProps) {
 
   const sortedMessages = props.messages?.sort((a, b) => a.timestamp > b.timestamp ? 1 : b.timestamp > a.timestamp ? -1 : 0);
-  console.log(sortedMessages);
 
   function getMessagePositionAtIndex(index: number) {
     if (!sortedMessages) { return MessagePosition.Island; }
