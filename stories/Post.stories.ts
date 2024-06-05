@@ -9,6 +9,11 @@ const meta: Meta<typeof Post> = {
   parameters: {
     layout: 'centered',
   },
+  argTypes: {
+    timeStamp: {
+      control: 'date'
+    }
+  }
 };
 
 export default meta;
@@ -22,7 +27,7 @@ export const Primary: Story = {
       avatarUrl: 'img/avatar1.webp',
       id: 1
     },
-    timeStamp: new Date('May 17, 2024 03:24:00'),
+    timeStamp: new Date('May 1, 2024 03:24:00'),
     imgSrc: 'img/village.jpeg',
     description: 'Found a new place to burn. What do y\'all think?',
     groupName: 'Village Burners',
