@@ -1,3 +1,5 @@
+import { UserProps } from "./UserProps"
+
 // Whether the Message is the top, middle, or bottom of a "block" of messages from the same user.
 export const enum MessagePosition {
   Top = 'message-position--top',
@@ -5,12 +7,6 @@ export const enum MessagePosition {
   Bottom = 'message-position--bottom',
   Island = 'message-position--island'
 }
-
-interface UserProps {
-  id: number
-  avatarUrl: string
-}
-
 export interface MessageProps {
   timestamp: Date
   sender: UserProps
