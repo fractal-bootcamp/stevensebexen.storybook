@@ -16,7 +16,7 @@ export function colorFromString(str: string): Color {
 
 export function stringFromColor(col: Color): string {
   console.log(col);
-  return ('#' + Math.round(col.r).toString(16) + Math.round(col.g).toString(16) + Math.round(col.b).toString(16));
+  return '#' + Math.round(col.r).toString(16).padStart(2, '0') + Math.round(col.g).toString(16).padStart(2, '0') + Math.round(col.b).toString(16).padStart(2, '0');
 }
 
 export function computeLinearGradientAtPos(pos: number, col1: Color, col2: Color): Color {
