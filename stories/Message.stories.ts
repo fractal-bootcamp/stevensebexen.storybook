@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Message, MessagePosition } from './Message';
 
 const meta: Meta<typeof Message> = {
-  title: 'Example/Message',
+  title: 'Steven/Message',
   component: Message,
   tags: ['autodocs'],
   parameters: {
@@ -25,6 +25,7 @@ export const Primary: Story = {
   args: {
     timestamp: new Date(),
     sender: {
+      name: 'Dragon1',
       id: 1,
       avatarUrl: 'img/avatar1.webp'
     },

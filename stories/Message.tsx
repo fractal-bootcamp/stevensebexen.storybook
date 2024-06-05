@@ -1,3 +1,5 @@
+import { UserProps } from "./UserProps"
+
 // Whether the Message is the top, middle, or bottom of a "block" of messages from the same user.
 export const enum MessagePosition {
   Top = 'message-position--top',
@@ -5,12 +7,6 @@ export const enum MessagePosition {
   Bottom = 'message-position--bottom',
   Island = 'message-position--island'
 }
-
-interface UserProps {
-  id: number
-  avatarUrl: string
-}
-
 export interface MessageProps {
   timestamp: Date
   sender: UserProps
@@ -76,9 +72,7 @@ function getMargins(messagePosition: MessagePosition | undefined) {
 export function Message(props: MessageProps) {
   return (
     <div className={`flex gap-[23px] ${props.isCurrentUser ? 'flex-row' : 'flex-row-reverse'}`} style={{ width: props.width || 400, alignSelf: props.isCurrentUser ? 'flex-start' : 'flex-end'}}>
-      <div className="w-[48px] h-[48px] flex-none">
-        <img className="object-cover rounded-full" src={props.sender.avatarUrl}></img>
-      </div>
+      <img className="w-[48px] h-[48px] object-cover rounded-full" src={props.sender.avatarUrl}></img>
       <div className="px-[23px] py-[15px] min-w-0" style={{
         backgroundColor: (props.isCurrentUser ? '#74C2FF' : '#D9D9D9'),
         borderRadius: getBorderRadius(Boolean(props.isCurrentUser), props.messagePosition),

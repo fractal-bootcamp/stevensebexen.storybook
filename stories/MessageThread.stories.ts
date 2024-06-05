@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { MessageThread } from './MessageThread';
 
 const meta: Meta<typeof MessageThread> = {
-  title: 'Example/MessageThread',
+  title: 'Steven/MessageThread',
   component: MessageThread,
   tags: ['autodocs'],
   parameters: {
@@ -24,6 +24,7 @@ export const Primary: Story = {
       {
         timestamp: new Date(100),
         sender: {
+          name: 'Dragon1',
           id: 1,
           avatarUrl: 'img/avatar1.webp'
         },
@@ -32,6 +33,7 @@ export const Primary: Story = {
       {
         timestamp: new Date(98),
         sender: {
+          name: 'Dragon1',
           id: 1,
           avatarUrl: 'img/avatar1.webp'
         },
@@ -40,6 +42,7 @@ export const Primary: Story = {
       {
         timestamp: new Date(102),
         sender: {
+          name: 'Dragon1',
           id: 1,
           avatarUrl: 'img/avatar1.webp'
         },
@@ -48,6 +51,7 @@ export const Primary: Story = {
       {
         timestamp: new Date(105),
         sender: {
+          name: 'Dragon2',
           id: 2,
           avatarUrl: 'img/avatar2.webp'
         },
@@ -56,6 +60,7 @@ export const Primary: Story = {
       {
         timestamp: new Date(108),
         sender: {
+          name: 'Dragon2',
           id: 2,
           avatarUrl: 'img/avatar2.webp'
         },
@@ -64,6 +69,7 @@ export const Primary: Story = {
       {
         timestamp: new Date(94),
         sender: {
+          name: 'Dragon3',
           id: 3,
           avatarUrl: 'img/avatar3.png'
         },

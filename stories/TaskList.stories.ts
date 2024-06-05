@@ -4,7 +4,7 @@ import { TaskProps } from './Task';
 import { TaskList } from './TaskList';
 
 const meta: Meta<typeof TaskList> = {
-  title: 'Example/TaskList',
+  title: 'Steven/TaskList',
   component: TaskList,
   tags: ['autodocs'],
   parameters: {
