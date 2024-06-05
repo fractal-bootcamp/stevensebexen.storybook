@@ -19,11 +19,12 @@ export class Color {
   }
   
   static interpolateLinear(pos: number, col1: Color, col2: Color): Color {
-    const ipos: number = 1 - pos;
+    const cpos = Math.max(0, Math.min(1, pos));
+    const ipos: number = 1 - cpos;
     return new Color(
-      col1.r * pos + col2.r * ipos,
-      col1.g * pos + col2.g * ipos,
-      col1.b * pos + col2.b * ipos
+      col1.r * cpos + col2.r * ipos,
+      col1.g * cpos + col2.g * ipos,
+      col1.b * cpos + col2.b * ipos
     )
   }
 
