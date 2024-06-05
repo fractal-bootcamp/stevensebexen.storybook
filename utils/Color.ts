@@ -22,9 +22,9 @@ export class Color {
     const cpos = Math.max(0, Math.min(1, pos));
     const ipos: number = 1 - cpos;
     return new Color(
-      col1.r * cpos + col2.r * ipos,
-      col1.g * cpos + col2.g * ipos,
-      col1.b * cpos + col2.b * ipos
+      col1.r * ipos + col2.r * cpos,
+      col1.g * ipos + col2.g * cpos,
+      col1.b * ipos + col2.b * cpos
     )
   }
 
