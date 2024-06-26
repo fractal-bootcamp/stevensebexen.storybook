@@ -54,7 +54,7 @@ export function Post(props: PostProps) {
           </p>
           <p className="text-[#828282]">{getFormattedTimestampString(props.timeStamp)}</p>
         </div>
-        <img src={props.imgSrc} style={{ height: props.imgHeight || 300 }} />
+        <img className='object-contain' src={props.imgSrc} />
         <p className="text-[20px]">{props.description}</p>
         <div className="flex flex-row gap-[16px]">
           <div className="flex flex-row gap-[8px]">

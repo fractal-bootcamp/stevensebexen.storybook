@@ -72,7 +72,10 @@ function getMargins(messagePosition: MessagePosition | undefined) {
 export function Message(props: MessageProps) {
   return (
     <div className={`flex gap-[23px] ${props.isCurrentUser ? 'flex-row' : 'flex-row-reverse'}`} style={{ width: props.width || 400, alignSelf: props.isCurrentUser ? 'flex-start' : 'flex-end'}}>
-      <img className="w-[48px] h-[48px] object-cover rounded-full" src={props.sender.avatarUrl}></img>
+      {props.messagePosition && [MessagePosition.Island, MessagePosition.Top].includes(props.messagePosition)
+        ? <img className="w-[48px] h-[48px] object-cover rounded-full" src={props.sender.avatarUrl}></img>
+        : <div className="w-[48px] h-[48px]" />
+      }
       <div className="px-[23px] py-[15px] min-w-0" style={{
         backgroundColor: (props.isCurrentUser ? '#74C2FF' : '#D9D9D9'),
         borderRadius: getBorderRadius(Boolean(props.isCurrentUser), props.messagePosition),
